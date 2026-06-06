@@ -10,7 +10,8 @@ export default function Navbar() {
 
   const { data: session, isPending } = useSession();
   const user = session?.user;
-  // console.log("Session data in Navbar:", session, "Is pending:", isPending, 'user', user);
+
+  console.log("Session data in Navbar:", session, "Is pending:", isPending, 'user', user);
 
    const handleSignOut = async () => {
     await signOut();
@@ -61,11 +62,11 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             {
               user ?
-                <>
+                <div className="text-white font-semibold">
                 Hi, {user.name}!
                     <Button onClick={handleSignOut}
                       variant="ghost">Sign Out</Button>
-                </> 
+                </div> 
                 :
                 <Link
                   href="/auth/signin"
