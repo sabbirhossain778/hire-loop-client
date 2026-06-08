@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const { data: session, isPending } = useSession();
+  const { data: session } = useSession();
   const user = session?.user;
 
   // console.log("Session data in Navbar:", session, "Is pending:", isPending, 'user', user);
