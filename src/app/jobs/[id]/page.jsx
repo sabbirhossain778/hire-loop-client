@@ -6,8 +6,6 @@ import { MapPin, Briefcase, CircleDollar, Calendar, ArrowUpRight } from '@gravit
 const Page = async ({ params }) => {
     const { id } = await params;
     const job = await getJobById(id);
-    console.log(job);
-    
 
     // Guard clause in case API fails or returns null
     if (!job) {
@@ -61,7 +59,9 @@ const Page = async ({ params }) => {
                         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
                             {job.jobTitle}
                         </h1>
-                    </div> 
+                    </div>
+
+                    
 
                     {/* Section: Responsibilities */}
                     <section className="space-y-3">
@@ -138,17 +138,18 @@ const Page = async ({ params }) => {
                                 <span className="text-sm font-medium text-zinc-200">{formatDate(job.deadline)}</span>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
+
+                    
 
                     {/* Action Button: Apply Routing Link Container */}
-                    <Button
-                        as={Link}
+                    <Link
                         href={`/jobs/${id}/apply`}
                         className="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-6 rounded-xl shadow-lg transition-colors flex items-center justify-center gap-2"
                         endContent={<ArrowUpRight className="w-4 h-4" />}
                     >
                         Apply For This Job
-                    </Button>
+                    </Link>
                 </aside>
 
             </div>
