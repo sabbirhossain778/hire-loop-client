@@ -4,7 +4,7 @@ import { getLoggedInRecruiterCompany } from '@/lib/api/companies';
 
 const jobPostPage = async () => {
     const company = await getLoggedInRecruiterCompany();
-    // console.log('jobPostPage', company);
+    console.log('jobPostPage', company);
     
     return (
         <div>

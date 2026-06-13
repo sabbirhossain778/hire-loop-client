@@ -106,7 +106,7 @@ export default function CompanyProfile({ recruiter, recruiterCompany }) {
             employeeCount: employeeCount || '1-10 employees',
             description,
             logo: logoUrl || (company ? company.logo : ''),
-            status: company ? company.status : 'Pending', // Retains status if updating profile details
+            status: company && company.status ? company.status : 'Pending', // Retains status if updating profile details
             recruiterId: recruiter.id // Associate company with the current recruiter
         }
         setCompany(newCompanyData);
@@ -115,7 +115,9 @@ export default function CompanyProfile({ recruiter, recruiterCompany }) {
 
         const payload = await createCompany(newCompanyData);
 
-        if (payload.insertedId) {
+        if(payload.insertedId) {
+            const savedCompany = {...company, _id: payload.insertedId}
+            setCompany(savedCompany)
             toast.success("Company profile created successfully!");
         }
 

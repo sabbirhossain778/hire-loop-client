@@ -31,13 +31,27 @@ export default function Navbar() {
     },
   ];
 
+
+  const dashboardLinks = {
+    seeker: '/dashboard/seeker',
+    recruiter: '/dashboard/recruiter',
+    admin: '/dashboard/admin'
+  }
+
+  if (user?.email) {
+    navLinks.push({
+      label: 'Dashboard',
+      href: dashboardLinks[user?.role || 'seeker']
+    })
+  }
+
   return (
     <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#0B0B0F]/80 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-fuchsia-500 shadow-lg">
-            <span className="text-xl font-bold text-white">P</span>
+            <span className="text-xl font-bold text-white">H</span>
           </div>
 
           <div className="hidden leading-none sm:block">
@@ -53,8 +67,8 @@ export default function Navbar() {
           <div className="hidden items-center gap-6 md:flex">
             {/* Nav Links */}
             <ul className="flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-2">
-              {navLinks.map((link) => (
-                <li key={link.href}>
+              {navLinks.map((link, index) => (
+                <li key={index}>
                   <Link
                     href={link.href}
                     className="rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/10 hover:text-white"
