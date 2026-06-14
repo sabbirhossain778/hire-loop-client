@@ -5,7 +5,8 @@ import React from 'react';
 
 
 const AdminCompaniesPage = async () => {
-    const companies = await getCompanies();
+    const rawCompanies = await getCompanies();
+    const companies = Array.isArray(rawCompanies) ? rawCompanies : [];
     
     return (
         <div className="min-h-screen bg-[#0d0d0f] p-8 text-neutral-100">
