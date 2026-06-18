@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HireLoop - Modern Job Portal Platform
 
-## Getting Started
+An advanced, full-stack job portal designed to bridge the gap between talented job seekers and top-tier recruiters. HireLoop offers a seamless, modern, and highly functional platform for job discovery, application management, and talent acquisition.
 
-First, run the development server:
+## 🌍 Live URLs
+- **Frontend Live Link:** [https://hireloop-client.vercel.app](https://hireloop-client.vercel.app)
+- **Backend Live Link:** [https://hireloop-server-one.vercel.app](https://hireloop-server-one.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Project Purpose
+HireLoop aims to simplify the recruitment process by providing dedicated, role-based interfaces for Seekers, Recruiters, and Admins. It streamlines job posting, applicant tracking, and company management while ensuring a secure and user-friendly experience.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Key Features
 
-## Learn More
+### 🔐 Authentication & Role Management
+- Secure JWT-based authentication.
+- Distinct roles: `Admin`, `Recruiter`, and `Seeker`.
+- Route protection to ensure secure access to respective dashboards.
 
-To learn more about Next.js, take a look at the following resources:
+### 💼 For Job Seekers
+- Advanced Job Search with real-time filtering (by Job Type, Category, and Remote status).
+- Server-side pagination for smooth browsing of large job lists.
+- Easy 1-click job application process.
+- Dedicated dashboard to track application status.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🏢 For Recruiters
+- Create and manage detailed Company Profiles.
+- Post, update, and manage job listings.
+- Review and track candidate applications efficiently.
+- Premium subscription plans via Stripe for enhanced hiring tools.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🛡️ For Admins
+- Comprehensive dashboard to monitor platform activities.
+- Manage user roles and system status.
+- Approve or reject company profiles.
+- View platform-wide statistics and analytics.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Technology Stack & Packages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Frontend:**
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS
+- **UI Components:** HeroUI
+- **Icons:** React Icons, Gravity UI Icons
+- **State Management:** React Hooks (`useState`, `useEffect`)
+
+**Backend:**
+- **Runtime:** Node.js
+- **Framework:** Express.js
+- **Database:** MongoDB (with `mongodb` native driver)
+- **Payment Gateway:** Stripe
+- **Security:** `cors`, `dotenv`, Custom JWT Middleware
+
+---
+
+## 🔑 Environment Variables Setup
+
+To run this project locally, create a `.env.local` file in the client directory and a `.env` file in the server directory with the following keys:
+
+**Client Side (`.env.local`):**
+```env
+NEXT_PUBLIC_BASE_URL=http://localhost:5000
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
