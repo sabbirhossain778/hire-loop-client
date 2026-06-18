@@ -3,7 +3,7 @@
 An advanced, full-stack job portal designed to bridge the gap between talented job seekers and top-tier recruiters. HireLoop offers a seamless, modern, and highly functional platform for job discovery, application management, and talent acquisition.
 
 ## 🌍 Live URLs
-- **Frontend Live Link:** [https://hireloop-client.vercel.app](https://hireloop-client.vercel.app)
+- **Frontend Live Link:** [https://hireloop-cient.vercel.app](https://hireloop-cient.vercel.app)
 - **Backend Live Link:** [https://hireloop-server-one.vercel.app](https://hireloop-server-one.vercel.app/)
 
 ---
